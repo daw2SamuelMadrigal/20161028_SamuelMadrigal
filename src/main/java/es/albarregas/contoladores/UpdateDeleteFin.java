@@ -101,6 +101,7 @@ public class UpdateDeleteFin extends HttpServlet {
                         throw new Exception("La fecha no es correcta");
                     }
                     // Creamos y ejecutamos la sentencia sql preparada
+// POR QUÉ ACTUALIZAS TODO SI ES POSIBLE QUE NO HAYAMOS CAMBIADO NADA
                     sql = "update aves set especie=?, lugar=?,fecha=? where anilla=?";
                     preparada = conexion.prepareStatement(sql);
                     preparada.setString(1, especie);

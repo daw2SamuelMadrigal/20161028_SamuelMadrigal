@@ -88,6 +88,7 @@ public class UpdateDelete extends HttpServlet {
                     url = "JSP/error.jsp";
                 } else {
                     // Creamos, preparamos y ejecutamos la sentencia sql
+// SERIA CONVENIENTE QUE LA VARIABLE sql FUESE UN StringBuilder
                     sql = "select * from aves where anilla in(?";
                     for (int i = 1; i < anillas.length; i++) {
                         sql = sql.concat(",?");
@@ -155,7 +156,7 @@ public class UpdateDelete extends HttpServlet {
         }
     }
 
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

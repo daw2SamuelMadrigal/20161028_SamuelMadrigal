@@ -40,6 +40,7 @@ public class Inicio extends HttpServlet {
             url = "JSP/create.jsp";
         } else {
             // Ejecutamos la creación del servicio JNDI
+// ES CONVENIENTE QUE EL DATASOURCE LO DECLARES EN EL MÉTODO init 
             try {
                 Context initialContext = new InitialContext();
                 datasource = (DataSource) initialContext.lookup("java:comp/env/jdbc/Pool");
@@ -110,7 +111,7 @@ public class Inicio extends HttpServlet {
         request.getRequestDispatcher(url).forward(request, response);
     }
 
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
